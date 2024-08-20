@@ -4,7 +4,7 @@ starter_files/static/images/saved/
 !./starter_files/static/images/saved/.gitkeep
 starter_files/static/images/temp/
 !./starter_files/static/images/temp/.gitkeep
-
+starter_files/test/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
