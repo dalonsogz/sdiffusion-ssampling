@@ -11,21 +11,54 @@
     <form action="prompt" method="post">
         <p>What kind of image would you like to generate?</p>
         <br>
-        <input id="prompt" type="text" name="prompt_input">
+        <input id="prompt" type="text" name="prompt_input" value="{{ current_prompt_input }}">
         <br>
         <input id="generate_btn" type="submit" value="GENERATE" onclick="processing();">
     </form>
+    <!--
     <form action="supersample" method="post">
+        {% set counter = 0 %}
         {% for i in prompt_images %}
+            {% if loop.index is even and loop.index <= 2 %}{% endif %}
             <img class="generated" src="{{i}}">
+            {% if loop.index is even and loop.index>counter %}
+                {% break %}
+            {% endif %}
         {% endfor %}
         <br>
         {% for i in btn_range %}
+            {% if loop.index is even and loop.index <= counter %}{% continue %}{% endif %}
+        <button class="save_btn" name="save_btn" type="submit" value="{{i}}" onclick="saving({{i}});">
+        SAVE HD IMAGE
+        </button>
+            {% if loop.index is even and loop.index>counter %}{% set counter = loop.index %}{% break %}{% endif %}
+        {% endfor %}
+    </form>
+    -->
+    <form action="supersample" method="post">
+        {% set size = (prompt_images|length)|int %}
+        {% set msize = (size / 2)|int %}
+        {% for i in prompt_images[0:msize] %}
+            <img class="generated" src="{{i}}">
+        {% endfor %}
+        <br>
+        {% for i in btn_range[0:msize] %}
         <button class="save_btn" name="save_btn" type="submit" value="{{i}}" onclick="saving({{i}});">
         SAVE HD IMAGE
         </button>
         {% endfor %}
+        <br>
+        {% for i in prompt_images[msize:size] %}
+        <img class="generated" src="{{i}}">
+        {% endfor %}
+        <br>
+        {% for i in btn_range[msize:size] %}
+        <button class="save_btn" name="save_btn" type="submit" value="{{i}}" onclick="saving({{i}});">
+        SAVE HD IMAGE
+        </button>
+        {% endfor %}
+
     </form>
-    <script type=text/javascript src="{{ url_for('static', filename='js/main.js') }}"></script>            
+    <script type=text/javascript src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

@@ -34,15 +34,16 @@ The app will take in a user-provided text prompt and convert it into high-resolu
 - FreeU: Free Lunch in Diffusion U-Net() for improving quality results: https://github.com/ChenyangSi/FreeU
 - NVIDIA Container Toolkit for CUDA support:https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html
 - Turn on GPU access with Docker Compose: https://docs.docker.com/compose/gpu-support/
+- Template Designer Documentation: https://jinja.palletsprojects.com/en/3.1.x/templates
 
-## Docker: build and deploy
+## Docker handling
 
 ### Building and running your application
 
 When you're ready, start your application by running:
 `docker compose up --build`.
 
-Your application will be available at http://localhost:8000.
+Your application will be available at [localhost:8000](http://localhost:8000).
 
 ### Deploying your application to the cloud
 
@@ -56,6 +57,20 @@ Then, push it to your registry, e.g. `docker push myregistry.com/myapp`.
 
 Consult Docker's [getting started](https://docs.docker.com/go/get-started-sharing/)
 docs for more detail on building and pushing.
+
+## Docker vunerabilities scan
+
+Vulnerabilities quick view:
+`docker scout quickview <img_name>:<tag_version>`
+
+View vulnerabilities:
+`docker scout cves <img_name>:<tag_version>`
+
+View base image update recommendations:
+`docker scout recommendations <img_name>:<tag_version>`
+
+Include policy results in your quickview by supplying an organization
+`docker scout quickview <img_name>:<tag_version> --org <organization>`
 
 ### References
 * [Docker's Python guide](https://docs.docker.com/language/python/)
