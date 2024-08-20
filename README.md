@@ -12,12 +12,12 @@ The app will take in a user-provided text prompt and convert it into high-resolu
 
 ## Building and running
 
-- At 'starter_file': docker compose up --build
+- At 'starter_files' directory: docker compose up --build
 - Application will be available at <a href="http://localhost:8080" target="_blank">localhost:8080</a>
 
 ## Screenshot
 
-<img src="https://raw.githubusercontent.com/dalonsogz/sdiffusion-ssampling/main/starter_files/static/images/screenshot.png" width=600px>
+<img src="./starter_files/static/images/screenshot.png" width=600px>
 
 ## Useful links
 
