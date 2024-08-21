@@ -13,7 +13,11 @@ The app will take in a user-provided text prompt and convert it into high-resolu
 ## Building and running
 
 - At 'starter_files' directory: docker compose up --build
-- Application will be available at <a href="http://localhost:8080" target="_blank">localhost:8080</a>
+- Application will be available at <a href="http://localhost:8000" target="_blank">localhost:8000</a>
+
+Alternatively, you can run a full image already uploaded to docker hub with this command:
+    
+docker run --gpus=all -p 8000:8000 -v ./:/app/static/images/saved dalonsogz20/diffuse_me:1.2
 
 ## Screenshot
 

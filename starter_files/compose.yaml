@@ -15,6 +15,7 @@ services:
       - 8000:8000
     volumes:
       - ./:/app
+#      - /mnt/g/stable-diffusion-v1-4:/app/stable-diffusion-v1-4
       - sd_model:/app/stable-diffusion-v1-4
     deploy:
       resources:
