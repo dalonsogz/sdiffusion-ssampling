@@ -15,26 +15,6 @@
         <br>
         <input id="generate_btn" type="submit" value="GENERATE" onclick="processing();">
     </form>
-    <!--
-    <form action="supersample" method="post">
-        {% set counter = 0 %}
-        {% for i in prompt_images %}
-            {% if loop.index is even and loop.index <= 2 %}{% endif %}
-            <img class="generated" src="{{i}}">
-            {% if loop.index is even and loop.index>counter %}
-                {% break %}
-            {% endif %}
-        {% endfor %}
-        <br>
-        {% for i in btn_range %}
-            {% if loop.index is even and loop.index <= counter %}{% continue %}{% endif %}
-        <button class="save_btn" name="save_btn" type="submit" value="{{i}}" onclick="saving({{i}});">
-        SAVE HD IMAGE
-        </button>
-            {% if loop.index is even and loop.index>counter %}{% set counter = loop.index %}{% break %}{% endif %}
-        {% endfor %}
-    </form>
-    -->
     <form action="supersample" method="post">
         {% set size = (prompt_images|length)|int %}
         {% set msize = (size / 2)|int %}

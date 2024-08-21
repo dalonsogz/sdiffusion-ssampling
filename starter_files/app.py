@@ -5,12 +5,12 @@ from diffusers import StableDiffusionPipeline
 import torch
 import cv2
 from datetime import datetime
-from jinja2 import Environment
 
-
-def environment(**options):
-    env = Environment(**options, extensions=['jinja2.ext.loopcontrols'])
-    return env
+# Uncomment this to enable jinja 'loopcontrols' extension to be able to use 'break' and 'continue' the index.html template
+# from jinja2 import Environment
+# def environment(**options):
+#     env = Environment(**options, extensions=['jinja2.ext.loopcontrols'])
+#     return env
 
 
 print(torch.cuda.is_available())

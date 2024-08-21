@@ -5,6 +5,7 @@ starter_files/static/images/saved/
 starter_files/static/images/temp/
 !./starter_files/static/images/temp/.gitkeep
 starter_files/test/
+starter_files/stable-diffusion-v1-4/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
